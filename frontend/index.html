@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MergeKit — Open Source Contribution Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+</head>
+<body>
+<div id="app">
+
+  <!-- ── Sidebar ── -->
+  <aside id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-mark">M</div>
+      <div class="brand-name">MergeKit</div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-label">Overview</div>
+      <div class="nav-item active" data-tab="dashboard">
+        <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><rect x="1" y="1" width="5.5" height="5.5" rx="1.2" fill="currentColor"/><rect x="8.5" y="1" width="5.5" height="5.5" rx="1.2" fill="currentColor" opacity=".5"/><rect x="1" y="8.5" width="5.5" height="5.5" rx="1.2" fill="currentColor" opacity=".5"/><rect x="8.5" y="8.5" width="5.5" height="5.5" rx="1.2" fill="currentColor" opacity=".5"/></svg>
+        Dashboard
+      </div>
+      <div class="nav-item" data-tab="prs">
+        <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="5.5" stroke="currentColor" stroke-width="1.3"/><path d="M7.5 4.5v3l2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Pull Requests
+        <span class="nav-badge amber" id="nav-prs-badge"></span>
+      </div>
+      <div class="nav-item" data-tab="discover">
+        <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><circle cx="6.5" cy="6.5" r="4.5" stroke="currentColor" stroke-width="1.3"/><path d="M10 10l3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        Discover
+      </div>
+    </div>
+
+    <div class="sidebar-sep"></div>
+
+    <div class="nav-section">
+      <div class="nav-label">Insights</div>
+      <div class="nav-item" data-tab="analytics">
+        <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><path d="M2 12l3-4 3 2 3-5 2 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Analytics
+      </div>
+      <div class="nav-item" data-tab="community">
+        <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><circle cx="5" cy="5" r="2.5" stroke="currentColor" stroke-width="1.2"/><circle cx="10" cy="10" r="2.5" stroke="currentColor" stroke-width="1.2"/><path d="M7 7l1 1" stroke="currentColor" stroke-width="1.2"/></svg>
+        Community
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="user-avatar"><span id="sidebar-avatar-initials">AK</span></div>
+        <div>
+          <div class="user-name" id="sidebar-user-name">Amir Khalil</div>
+          <div class="user-handle" id="sidebar-user-handle">@amir_k</div>
+        </div>
+        <div class="user-badge">PRO</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── Main ── -->
+  <div id="main-content">
+
+    <!-- Top bar -->
+    <div id="topbar">
+      <div class="topbar-left">
+        <div class="topbar-eyebrow">MergeKit</div>
+        <h1 id="page-title">Dashboard</h1>
+      </div>
+      <div class="topbar-right">
+        <div class="search-pill">
+          <svg width="12" height="12" fill="none" viewBox="0 0 12 12"><circle cx="5" cy="5" r="3.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 8l2.5 2.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <span>Search…</span>
+        </div>
+        <button class="ico-btn" id="connect-btn" title="Connect to backend">
+          <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Tab panels -->
+    <div id="tab-content">
+
+      <!-- ════ DASHBOARD ════ -->
+      <div class="tab-panel active" id="tab-dashboard">
+        <div class="stats-grid">
+          <div class="stat-tile">
+            <div class="stat-label">Total Contributions</div>
+            <div class="stat-value green" id="stat-contributions">—</div>
+            <div class="stat-sub">all time</div>
+          </div>
+          <div class="stat-tile">
+            <div class="stat-label">Merged PRs</div>
+            <div class="stat-value" id="stat-merged">—</div>
+            <div class="stat-sub">pull requests</div>
+          </div>
+          <div class="stat-tile">
+            <div class="stat-label">Impact Score</div>
+            <div class="stat-value amber" id="stat-score">—</div>
+            <div class="stat-sub">community ranking</div>
+          </div>
+          <div class="stat-tile">
+            <div class="stat-label">Active Streak</div>
+            <div class="stat-value green" id="stat-streak">—</div>
+            <div class="stat-sub">consecutive days</div>
+          </div>
+        </div>
+
+        <div class="mid-row">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Contribution Activity</div>
+                <div class="card-meta">365 days</div>
+              </div>
+            </div>
+            <div class="heatmap-wrap">
+              <div class="hm-months">
+                <div class="hm-month">Jan</div><div class="hm-month">Feb</div><div class="hm-month">Mar</div>
+                <div class="hm-month">Apr</div><div class="hm-month">May</div><div class="hm-month">Jun</div>
+                <div class="hm-month">Jul</div><div class="hm-month">Aug</div><div class="hm-month">Sep</div>
+                <div class="hm-month">Oct</div><div class="hm-month">Nov</div><div class="hm-month">Dec</div>
+              </div>
+              <div class="hm-grid" id="heatmap-grid"></div>
+              <div class="hm-legend">
+                <span>Less</span>
+                <div class="hm-leg-cells">
+                  <div class="hm-leg-cell" style="background:var(--border)"></div>
+                  <div class="hm-leg-cell" style="background:#1E4033"></div>
+                  <div class="hm-leg-cell" style="background:#276B50"></div>
+                  <div class="hm-leg-cell" style="background:#339966"></div>
+                  <div class="hm-leg-cell" style="background:var(--green)"></div>
+                </div>
+                <span>More</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Recent PRs</div>
+              <a class="card-link" onclick="switchTab('prs')">View all →</a>
+            </div>
+            <div id="pr-preview-list"><div class="loading-state">Loading…</div></div>
+          </div>
+        </div>
+
+        <div class="bot-row">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Leaderboard</div>
+              <a class="card-link" onclick="switchTab('community')">Full board →</a>
+            </div>
+            <div id="dash-leaderboard"><div class="loading-state">Loading…</div></div>
+          </div>
+
+          <div class="card">
+            <div class="card-header"><div class="card-title">Active Challenges</div></div>
+            <div style="padding:0 16px 16px" id="challenges-list"><div class="loading-state">Loading…</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ PULL REQUESTS ════ -->
+      <div class="tab-panel" id="tab-prs">
+        <div class="filter-bar" id="pr-tag-filters">
+          <span style="font-size:11px;color:var(--fg3);font-weight:600">Tag:</span>
+          <div class="filter-pill" data-tag="frontend">Frontend</div>
+          <div class="filter-pill" data-tag="backend">Backend</div>
+          <div class="filter-pill" data-tag="docs">Docs</div>
+          <div class="filter-pill" data-tag="testing">Testing</div>
+          <div class="filter-pill" data-tag="devops">DevOps</div>
+          <div class="filter-pill" data-tag="security">Security</div>
+          <div class="filter-pill" data-tag="performance">Performance</div>
+        </div>
+        <div class="filter-bar" id="pr-status-filters">
+          <span style="font-size:11px;color:var(--fg3);font-weight:600">Status:</span>
+          <div class="filter-pill" data-status="merged">Merged</div>
+          <div class="filter-pill" data-status="open">Open</div>
+          <div class="filter-pill" data-status="closed">Closed</div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <span style="font-size:11px;color:var(--fg3)" id="pr-count"></span>
+        </div>
+        <div class="card">
+          <div id="pr-list"><div class="loading-state">Loading…</div></div>
+        </div>
+      </div>
+
+      <!-- ════ DISCOVER ════ -->
+      <div class="tab-panel" id="tab-discover">
+        <div class="filter-bar" id="repo-filters">
+          <span style="font-size:11px;color:var(--fg3);font-weight:600">Filter:</span>
+          <div class="filter-pill" data-gfi="true">Good First Issue</div>
+          <div class="filter-pill" data-difficulty="easy">Easy</div>
+          <div class="filter-pill" data-difficulty="medium">Medium</div>
+          <div class="filter-pill" data-difficulty="hard">Hard</div>
+        </div>
+        <div class="repo-grid" id="repo-grid"><div class="loading-state">Loading…</div></div>
+      </div>
+
+      <!-- ════ ANALYTICS ════ -->
+      <div class="tab-panel" id="tab-analytics">
+        <div class="stats-grid" style="margin-bottom:18px">
+          <div class="stat-tile">
+            <div class="stat-label">Total Additions</div>
+            <div class="stat-value green" id="an-additions">—</div>
+          </div>
+          <div class="stat-tile">
+            <div class="stat-label">Total Deletions</div>
+            <div class="stat-value amber" id="an-deletions">—</div>
+          </div>
+          <div class="stat-tile">
+            <div class="stat-label">Merge Rate</div>
+            <div class="stat-value" id="an-merge-rate">—</div>
+          </div>
+        </div>
+        <div class="mid-row">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Monthly Contributions</div></div>
+            <div class="chart-canvas-wrap" style="height:200px">
+              <canvas id="monthly-chart"></canvas>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header"><div class="card-title">By Tag</div></div>
+            <div class="chart-canvas-wrap" style="height:200px">
+              <canvas id="tag-chart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ COMMUNITY ════ -->
+      <div class="tab-panel" id="tab-community">
+        <div class="mid-row">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Activity Feed</div></div>
+            <div style="padding:0 16px 16px" id="feed-list"><div class="loading-state">Loading…</div></div>
+          </div>
+          <div class="card">
+            <div class="card-header"><div class="card-title">Leaderboard</div></div>
+            <div id="community-leaderboard"><div class="loading-state">Loading…</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /tab-content -->
+  </div><!-- /main-content -->
+</div><!-- /app -->
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

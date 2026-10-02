@@ -1,0 +1,21 @@
+/* ANALYTICS */
+.analytics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+
+/* TIMELINE */
+.timeline { display: flex; flex-direction: column; gap: 0; }
+.tl-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 0.5px solid var(--border); }
+.tl-item:last-child { border-bottom: none; }
+.tl-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+.tl-dot.m { background: #a78bfa; }
+.tl-dot.o { background: var(--emerald); }
+.tl-dot.c { background: var(--rose); }
+.tl-content { flex: 1; }
+.tl-title { font-size: 13px; color: var(--offwhite); margin-bottom: 2px; }
+.tl-title em { color: var(--emerald); font-style: normal; }
+.tl-meta { font-size: 11px; color: var(--text-muted); }
+.tl-date { font-size: 11px; color: var(--text-muted); flex-shrink: 0; }
+
+/* MONTHLY CHART WRAPPER */
+.chart-wrap { position: relative; width: 100%; height: 180px; }
+.chart-wrap.sm { height: 160px; }
+.chart-wrap.lg { height: 200px; }

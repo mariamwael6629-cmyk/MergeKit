@@ -1,0 +1,12 @@
+/* TOAST */
+.toast { position: fixed; bottom: 20px; right: 20px; background: var(--charcoal); border: 0.5px solid var(--border-em); color: var(--offwhite); padding: 10px 16px; border-radius: 8px; font-size: 13px; z-index: 200; opacity: 0; transform: translateY(8px); transition: all 0.2s; pointer-events: none; }
+.toast.show { opacity: 1; transform: translateY(0); }
+.toast.error { border-color: rgba(244,63,94,0.4); color: var(--rose); }
+
+@media (max-width: 600px) {
+  .bento { grid-template-columns: 1fr; }
+  .pr-grid { grid-template-columns: 1fr; }
+  .ai-suggestions { grid-template-columns: 1fr; }
+  .analytics-grid { grid-template-columns: 1fr; }
+  .community-grid { grid-template-columns: 1fr; }
+}

@@ -35,8 +35,11 @@ MergeKit is a high-performance, full-stack open-source contribution tracking and
 .
 ├── frontend/           # Ultra-fast, zero-build Static SPA
 │   ├── index.html
-│   ├── css/style.css
-│   └── js/{api.js, app.js}
+│   ├── css/            # base, nav, dashboard, discover, leaderboard, analytics, community, toast
+│   └── js/
+│       ├── core/       # api client, state, navigation (tabs), utils, helpers
+│       ├── features/   # dashboard, pull-requests, discover, community, analytics, connect-github
+│       └── main.js     # DOMContentLoaded boot
 └── backend/            # High-performance FastAPI REST API
 ├── app/
 │   ├── api/routes/   # Auth, dashboard, pull_requests, repositories, community, analytics

@@ -1,0 +1,35 @@
+/* FEED */
+.feed-item { display: flex; gap: 10px; padding: 12px 0; border-bottom: 0.5px solid var(--border); }
+.feed-item:last-child { border-bottom: none; }
+.feed-av { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; flex-shrink: 0; }
+.feed-text { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+.feed-text strong { color: var(--offwhite); font-weight: 500; }
+.feed-text a { color: var(--emerald); }
+.feed-time { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+
+/* SECTION HEADER */
+.sec-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.sec-title { font-size: 16px; font-weight: 500; color: var(--offwhite); }
+.sec-action { font-size: 12px; color: var(--emerald); cursor: pointer; }
+
+/* CHALLENGE CARD */
+.challenge-card { background: var(--surface); border: 0.5px solid var(--border-em); border-radius: 10px; padding: 16px; margin-bottom: 12px; }
+.challenge-card.done { border-color: var(--border); opacity: 0.7; }
+.chal-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+.chal-title { font-size: 14px; font-weight: 500; color: var(--offwhite); }
+.chal-pts { font-size: 13px; color: var(--amber); font-weight: 500; }
+.chal-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 10px; }
+.chal-progress { height: 5px; background: var(--charcoal); border-radius: 3px; overflow: hidden; }
+.chal-bar { height: 5px; border-radius: 3px; background: var(--emerald); }
+.chal-footer { display: flex; justify-content: space-between; margin-top: 6px; font-size: 11px; color: var(--text-muted); }
+
+/* COMMUNITY GRID */
+.community-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+
+/* LEGEND */
+.legend-row { display: flex; gap: 16px; margin-bottom: 12px; font-size: 12px; color: var(--text-muted); flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 4px; }
+.legend-swatch { width: 10px; height: 10px; border-radius: 2px; }
+.legend-swatch.merged { background: #10b981; }
+.legend-swatch.open { background: #a78bfa; }
+.legend-swatch.closed { background: #f43f5e; }

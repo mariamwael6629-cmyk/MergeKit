@@ -1,0 +1,24 @@
+:root {
+  --graphite: #1a1d21;
+  --charcoal: #22262b;
+  --surface: #2a2f36;
+  --surface2: #323840;
+  --emerald: #10b981;
+  --emerald-dim: #059669;
+  --emerald-glow: rgba(16,185,129,0.15);
+  --emerald-faint: rgba(16,185,129,0.07);
+  --offwhite: #f0ede8;
+  --offwhite-dim: #b8b4ae;
+  --offwhite-muted: #6b6762;
+  --amber: #f59e0b;
+  --coral: #f97316;
+  --rose: #f43f5e;
+  --text: #e8e4de;
+  --text-muted: #8a8580;
+  --border: rgba(255,255,255,0.07);
+  --border-em: rgba(16,185,129,0.25);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--graphite); color: var(--text); font-family: var(--font-sans, system-ui); font-size: 14px; }
+
+.shell { background: var(--graphite); min-height: 100vh; padding: 0; }

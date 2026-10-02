@@ -1,0 +1,20 @@
+/* DISCOVERY */
+.issue-filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+.filter-chip { background: var(--surface); border: 0.5px solid var(--border); color: var(--text-muted); padding: 5px 12px; border-radius: 20px; font-size: 12px; cursor: pointer; transition: all 0.15s; }
+.filter-chip:hover, .filter-chip.on { background: var(--emerald-faint); border-color: var(--border-em); color: var(--emerald); }
+.repo-list { display: flex; flex-direction: column; gap: 10px; }
+.repo-item { background: var(--charcoal); border: 0.5px solid var(--border); border-radius: 10px; padding: 16px; display: flex; gap: 14px; align-items: flex-start; cursor: pointer; transition: border-color 0.15s; }
+.repo-item:hover { border-color: var(--border-em); }
+.repo-icon { width: 36px; height: 36px; background: var(--emerald-faint); border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 0.5px solid var(--border-em); }
+.repo-icon i { font-size: 18px; color: var(--emerald); }
+.repo-info { flex: 1; }
+.repo-name { font-size: 14px; font-weight: 500; color: var(--offwhite); margin-bottom: 4px; }
+.repo-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 8px; }
+.repo-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.repo-tag { font-size: 11px; padding: 2px 8px; border-radius: 4px; }
+.repo-tag.gfi { background: rgba(16,185,129,0.1); color: var(--emerald); border: 0.5px solid rgba(16,185,129,0.2); }
+.repo-tag.hw { background: rgba(245,158,11,0.1); color: var(--amber); border: 0.5px solid rgba(245,158,11,0.2); }
+.repo-tag.lang { background: var(--surface); color: var(--text-muted); border: 0.5px solid var(--border); }
+.repo-tag.hack { background: rgba(249,115,22,0.1); color: var(--coral); border: 0.5px solid rgba(249,115,22,0.2); }
+.repo-stars { display: flex; align-items: center; gap: 4px; font-size: 12px; color: var(--amber); flex-shrink: 0; }
+.repo-match { font-size: 11px; color: var(--emerald); margin-top: 4px; text-align: right; }

@@ -299,7 +299,7 @@ async function loadCommunity() {
 }
 
 const RANK_CLASS = { 1: 'gold', 2: 'silver', 3: '', 4: 'bronze' };
-const AVATAR_COLORS = ['#3178c6', '#a78bfa', '#10b981', '#f97316', '#6b6762'];
+const AVATAR_COLORS = ['#2457C5', '#8A5A2B', '#0B7A55', '#C4382F', '#3F4A52'];
 
 function renderLeaderboard(items) {
   document.getElementById('leader-list').innerHTML = items.map(item => {
@@ -308,7 +308,7 @@ function renderLeaderboard(items) {
     return `
     <div class="leader-item ${item.is_current_user ? 'you' : ''}">
       <span class="leader-rank ${rankCls}">${item.rank}</span>
-      <div class="leader-av" style="background:${item.is_current_user ? 'var(--emerald-faint)' : avColor};color:${item.is_current_user ? 'var(--emerald)' : '#fff'}">${escapeHtml(item.initials)}</div>
+      <div class="leader-av" style="background:${item.is_current_user ? 'var(--accent)' : avColor};color:#fff">${escapeHtml(item.initials)}</div>
       <div class="leader-body">
         <div class="leader-name">${item.is_current_user ? 'You — ' : ''}${escapeHtml(item.name)}</div>
         <div class="leader-sub">${item.contributions} contributions</div>
@@ -388,15 +388,15 @@ function renderAnalytics(data) {
       labels: data.monthly_volume.labels,
       datasets: [{
         label: 'PRs', data: data.monthly_volume.data,
-        backgroundColor: 'rgba(16,185,129,0.5)', borderColor: '#10b981', borderWidth: 1, borderRadius: 4
+        backgroundColor: '#0B7A55', borderWidth: 0, borderRadius: 2, maxBarThickness: 36
       }]
     },
     options: {
       responsive: true, maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: {
-        x: { ticks: { color: '#6b6762', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,0.04)' } },
-        y: { ticks: { color: '#6b6762', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,0.04)' } }
+        x: { ticks: { color: '#5A5F64', font: { size: 12, family: 'Archivo' } }, grid: { color: '#ECECE7' }, border: { display: false } },
+        y: { ticks: { color: '#5A5F64', font: { size: 12, family: 'Archivo' } }, grid: { color: '#ECECE7' }, border: { display: false } }
       }
     }
   });
@@ -405,7 +405,7 @@ function renderAnalytics(data) {
     type: 'doughnut',
     data: {
       labels: ['Merged', 'Open', 'Closed'],
-      datasets: [{ data: [outcome.merged, outcome.open, outcome.closed], backgroundColor: ['#10b981', '#a78bfa', '#f43f5e'], borderWidth: 0, hoverOffset: 4 }]
+      datasets: [{ data: [outcome.merged, outcome.open, outcome.closed], backgroundColor: ['#0B7A55', '#2457C5', '#C4382F'], borderWidth: 2, borderColor: '#FFFFFF', hoverOffset: 4 }]
     },
     options: { responsive: true, maintainAspectRatio: false, cutout: '70%', plugins: { legend: { display: false } } }
   });
@@ -416,16 +416,16 @@ function renderAnalytics(data) {
       labels: data.growth.labels,
       datasets: [{
         label: 'Cumulative contributions', data: data.growth.data,
-        borderColor: '#10b981', backgroundColor: 'rgba(16,185,129,0.08)',
-        borderWidth: 2, fill: true, tension: 0.4, pointBackgroundColor: '#10b981', pointRadius: 3
+        borderColor: '#0B7A55', backgroundColor: 'rgba(11,122,85,0.08)',
+        borderWidth: 2.5, fill: true, tension: 0.25, pointBackgroundColor: '#0B7A55', pointRadius: 0, pointHoverRadius: 5
       }]
     },
     options: {
       responsive: true, maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: {
-        x: { ticks: { color: '#6b6762', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,0.04)' } },
-        y: { ticks: { color: '#6b6762', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,0.04)' } }
+        x: { ticks: { color: '#5A5F64', font: { size: 12, family: 'Archivo' } }, grid: { color: '#ECECE7' }, border: { display: false } },
+        y: { ticks: { color: '#5A5F64', font: { size: 12, family: 'Archivo' } }, grid: { color: '#ECECE7' }, border: { display: false } }
       }
     }
   });

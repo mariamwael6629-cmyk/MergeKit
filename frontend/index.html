@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MergeKit — Open Source Contribution Tracker</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#FAFAF7">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -110,14 +114,14 @@
                   <span class="ring-lbl">score</span>
                 </div>
               </div>
-              <div class="impact-metrics" style="width:100%" id="impact-metrics"></div>
+              <div class="impact-metrics" id="impact-metrics"></div>
             </div>
           </div>
         </div>
       </div>
 
       <!-- STREAK + LANGUAGES ROW -->
-      <div class="bento" style="margin-bottom:20px">
+      <div class="bento bento-even">
         <div class="card">
           <div class="card-title"><i class="ti ti-flame" aria-hidden="true"></i> <span id="streak-title">Current streak</span></div>
           <div class="streak-row" id="streak-row"></div>
@@ -138,17 +142,17 @@
           <div class="ai-card">
             <div class="ai-card-icon"><i class="ti ti-target-arrow" aria-hidden="true"></i></div>
             <div class="ai-card-title">Next best contribution</div>
-            <div class="ai-card-desc">vercel/next.js has 3 issues matching your TypeScript + React expertise. Good merge probability.</div>
+            <div class="ai-card-desc">vercel/next.js has 3 open issues that match your TypeScript and React work, and they look likely to merge.</div>
           </div>
           <div class="ai-card">
             <div class="ai-card-icon"><i class="ti ti-writing" aria-hidden="true"></i></div>
             <div class="ai-card-title">PR description draft</div>
-            <div class="ai-card-desc">AI can generate a structured PR description with context, impact, and test coverage notes.</div>
+            <div class="ai-card-desc">Get a first draft of your PR description, with context, impact and test coverage notes filled in.</div>
           </div>
           <div class="ai-card">
             <div class="ai-card-icon"><i class="ti ti-chart-line" aria-hidden="true"></i></div>
             <div class="ai-card-title">Contribution quality</div>
-            <div class="ai-card-desc">Your last 5 PRs averaged 94% quality score. Suggestion: add more inline comments to boost to 98%.</div>
+            <div class="ai-card-desc">Your last 5 PRs averaged a 94% quality score. More inline comments would likely push that to 98%.</div>
           </div>
         </div>
       </div>
@@ -166,11 +170,11 @@
     <div class="dash">
       <div class="sec-head">
         <div class="sec-title">Pull request portfolio</div>
-        <div style="display:flex;gap:8px">
-          <select id="pr-status-filter" style="background:var(--charcoal);border:0.5px solid var(--border);color:var(--text-muted);padding:6px 12px;border-radius:8px;font-size:12px">
+        <div class="select-row">
+          <select id="pr-status-filter" class="select" aria-label="Filter by status">
             <option value="all">All status</option><option value="merged">Merged</option><option value="open">Open</option><option value="closed">Closed</option>
           </select>
-          <select id="pr-lang-filter" style="background:var(--charcoal);border:0.5px solid var(--border);color:var(--text-muted);padding:6px 12px;border-radius:8px;font-size:12px">
+          <select id="pr-lang-filter" class="select" aria-label="Filter by language">
             <option value="all">All languages</option><option value="TypeScript">TypeScript</option><option value="Python">Python</option><option value="Go">Go</option><option value="Rust">Rust</option>
           </select>
         </div>
@@ -192,7 +196,7 @@
   <div id="tab-discover" class="tab-section">
     <div class="dash">
       <div class="sec-head">
-        <div class="sec-title">Contribution discovery engine</div>
+        <div class="sec-title">Find your next contribution</div>
         <span class="badge-pill"><i class="ti ti-sparkles" aria-hidden="true"></i> AI-powered</span>
       </div>
       <div class="issue-filters" id="discover-filters">
@@ -204,7 +208,7 @@
         <span class="filter-chip" data-value="Backend">Backend</span>
         <span class="filter-chip" data-value="AI / ML">AI / ML</span>
       </div>
-      <div style="margin-bottom:10px;font-size:12px;color:var(--text-muted)" id="repo-count">Loading…</div>
+      <div class="repo-count" id="repo-count">Loading…</div>
       <div class="repo-list" id="repo-list"></div>
     </div>
   </div>
@@ -234,7 +238,7 @@
   <div id="tab-analytics" class="tab-section">
     <div class="dash">
       <div class="sec-head"><div class="sec-title">Contribution analytics</div><span class="badge-pill">Last 12 months</span></div>
-      <div class="stat-grid" style="margin-bottom:20px">
+      <div class="stat-grid stat-grid-4">
         <div class="stat-card em"><div class="stat-label">Merge success rate</div><div class="stat-val em" id="an-merge-rate">0%</div><div class="stat-delta"><i class="ti ti-trending-up"></i> <span id="an-merge-rate-delta">—</span></div></div>
         <div class="stat-card"><div class="stat-label">Avg. review time</div><div class="stat-val" id="an-review-time">0d</div><div class="stat-delta amber"><i class="ti ti-clock"></i> <span id="an-review-time-delta">—</span></div></div>
         <div class="stat-card"><div class="stat-label">Lines contributed</div><div class="stat-val" id="an-lines">0</div><div class="stat-delta"><i class="ti ti-trending-up"></i> <span id="an-lines-delta">—</span></div></div>

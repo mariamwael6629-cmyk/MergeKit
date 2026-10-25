@@ -24,6 +24,6 @@ function timeAgo(iso) {
 }
 
 const LANG_COLORS = {
-  TypeScript: '#D4A72C', Python: '#B4532A', Go: '#8A5A2B', Rust: '#dea584',
-  JavaScript: '#f1e05a', Java: '#b07219', 'C++': '#f34b7d'
+  TypeScript: '#D9622B', Python: '#8E3B2F', Go: '#6B4F3A', Rust: '#dea584',
+  JavaScript: '#E8916A', Java: '#b07219', 'C++': '#f34b7d'
 };

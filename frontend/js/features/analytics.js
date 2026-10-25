@@ -39,7 +39,7 @@ function renderAnalytics(data) {
       labels: data.monthly_volume.labels,
       datasets: [{
         label: 'PRs', data: data.monthly_volume.data,
-        backgroundColor: 'rgba(176,141,25,0.5)', borderColor: '#B08D19', borderWidth: 1, borderRadius: 4
+        backgroundColor: 'rgba(163,71,38,0.5)', borderColor: '#A34726', borderWidth: 1, borderRadius: 4
       }]
     },
     options: {
@@ -56,7 +56,7 @@ function renderAnalytics(data) {
     type: 'doughnut',
     data: {
       labels: ['Merged', 'Open', 'Closed'],
-      datasets: [{ data: [outcome.merged, outcome.open, outcome.closed], backgroundColor: ['#B08D19', '#E2BA36', '#f43f5e'], borderWidth: 0, hoverOffset: 4 }]
+      datasets: [{ data: [outcome.merged, outcome.open, outcome.closed], backgroundColor: ['#A34726', '#D36B45', '#f43f5e'], borderWidth: 0, hoverOffset: 4 }]
     },
     options: { responsive: true, maintainAspectRatio: false, cutout: '70%', plugins: { legend: { display: false } } }
   });
@@ -67,8 +67,8 @@ function renderAnalytics(data) {
       labels: data.growth.labels,
       datasets: [{
         label: 'Cumulative contributions', data: data.growth.data,
-        borderColor: '#B08D19', backgroundColor: 'rgba(176,141,25,0.08)',
-        borderWidth: 2, fill: true, tension: 0.4, pointBackgroundColor: '#B08D19', pointRadius: 3
+        borderColor: '#A34726', backgroundColor: 'rgba(163,71,38,0.08)',
+        borderWidth: 2, fill: true, tension: 0.4, pointBackgroundColor: '#A34726', pointRadius: 3
       }]
     },
     options: {

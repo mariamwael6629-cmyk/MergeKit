@@ -20,11 +20,11 @@ from app.schemas.dashboard import (
 )
 
 LANG_COLORS = {
-    "TypeScript": "#D4A72C",
-    "Python": "#B4532A",
-    "Go": "#8A5A2B",
+    "TypeScript": "#D9622B",
+    "Python": "#8E3B2F",
+    "Go": "#6B4F3A",
     "Rust": "#dea584",
-    "JavaScript": "#f1e05a",
+    "JavaScript": "#E8916A",
 }
 
 

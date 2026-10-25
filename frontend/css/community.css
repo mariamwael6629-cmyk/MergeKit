@@ -30,6 +30,6 @@
 .legend-row { display: flex; gap: 16px; margin-bottom: 12px; font-size: 12px; color: var(--text-muted); flex-wrap: wrap; }
 .legend-item { display: flex; align-items: center; gap: 4px; }
 .legend-swatch { width: 10px; height: 10px; border-radius: 2px; }
-.legend-swatch.merged { background: #B08D19; }
-.legend-swatch.open { background: #E2BA36; }
+.legend-swatch.merged { background: #A34726; }
+.legend-swatch.open { background: #D36B45; }
 .legend-swatch.closed { background: #f43f5e; }

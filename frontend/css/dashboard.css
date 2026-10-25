@@ -31,9 +31,9 @@
 /* HEATMAP */
 .heatmap { display: grid; grid-template-columns: repeat(52, 1fr); gap: 2px; }
 .heat-cell { aspect-ratio: 1; border-radius: 2px; background: var(--surface2); }
-.heat-cell.l1 { background: rgba(176,141,25,0.25); }
-.heat-cell.l2 { background: rgba(176,141,25,0.45); }
-.heat-cell.l3 { background: rgba(176,141,25,0.7); }
+.heat-cell.l1 { background: rgba(163,71,38,0.25); }
+.heat-cell.l2 { background: rgba(163,71,38,0.45); }
+.heat-cell.l3 { background: rgba(163,71,38,0.7); }
 .heat-cell.l4 { background: var(--emerald); }
 .heat-months { display: flex; justify-content: space-between; margin-top: 6px; }
 .heat-month { font-size: 10px; color: var(--text-muted); }
@@ -66,7 +66,7 @@
 .pr-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
 .pr-repo { font-size: 11px; color: var(--emerald); font-weight: 500; }
 .pr-status { font-size: 11px; padding: 3px 9px; border-radius: 20px; font-weight: 500; }
-.pr-status.merged { background: rgba(226,186,54,0.15); color: #E2BA36; border: 0.5px solid rgba(226,186,54,0.3); }
+.pr-status.merged { background: rgba(211,107,69,0.15); color: #D36B45; border: 0.5px solid rgba(211,107,69,0.3); }
 .pr-status.open { background: var(--emerald-faint); color: var(--emerald); border: 0.5px solid var(--border-em); }
 .pr-status.closed { background: rgba(244,63,94,0.1); color: var(--rose); border: 0.5px solid rgba(244,63,94,0.25); }
 .pr-title { font-size: 14px; font-weight: 500; color: var(--offwhite); line-height: 1.4; margin-bottom: 10px; }
@@ -76,7 +76,7 @@
 .lang-dot { width: 8px; height: 8px; border-radius: 50%; }
 .pr-impact { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--text-muted); }
 .pr-impact i { font-size: 13px; color: var(--emerald); }
-.pr-additions { font-size: 11px; color: #DCB73D; }
+.pr-additions { font-size: 11px; color: #D36B45; }
 .pr-deletions { font-size: 11px; color: var(--rose); }
 .pr-empty, .repo-empty { padding: 24px; text-align: center; color: var(--text-muted); font-size: 13px; }
 

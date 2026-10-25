@@ -6,7 +6,7 @@
 .tl-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 0.5px solid var(--border); }
 .tl-item:last-child { border-bottom: none; }
 .tl-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
-.tl-dot.m { background: #E2BA36; }
+.tl-dot.m { background: #D36B45; }
 .tl-dot.o { background: var(--emerald); }
 .tl-dot.c { background: var(--rose); }
 .tl-content { flex: 1; }

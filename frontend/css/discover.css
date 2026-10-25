@@ -12,7 +12,7 @@
 .repo-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 8px; }
 .repo-tags { display: flex; gap: 6px; flex-wrap: wrap; }
 .repo-tag { font-size: 11px; padding: 2px 8px; border-radius: 4px; }
-.repo-tag.gfi { background: rgba(16,185,129,0.1); color: var(--emerald); border: 0.5px solid rgba(16,185,129,0.2); }
+.repo-tag.gfi { background: rgba(176,141,25,0.1); color: var(--emerald); border: 0.5px solid rgba(176,141,25,0.2); }
 .repo-tag.hw { background: rgba(245,158,11,0.1); color: var(--amber); border: 0.5px solid rgba(245,158,11,0.2); }
 .repo-tag.lang { background: var(--surface); color: var(--text-muted); border: 0.5px solid var(--border); }
 .repo-tag.hack { background: rgba(249,115,22,0.1); color: var(--coral); border: 0.5px solid rgba(249,115,22,0.2); }

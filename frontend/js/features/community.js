@@ -17,7 +17,7 @@ async function loadCommunity() {
 }
 
 const RANK_CLASS = { 1: 'gold', 2: 'silver', 3: '', 4: 'bronze' };
-const AVATAR_COLORS = ['#3178c6', '#a78bfa', '#10b981', '#f97316', '#6b6762'];
+const AVATAR_COLORS = ['#C6A331', '#E2BA36', '#B08D19', '#f97316', '#6b6762'];
 
 function renderLeaderboard(items) {
   document.getElementById('leader-list').innerHTML = items.map(item => {

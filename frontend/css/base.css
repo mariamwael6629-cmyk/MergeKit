@@ -1,20 +1,20 @@
 :root {
-  --graphite: #211E1A;
-  --charcoal: #2B2722;
-  --surface: #36302A;
-  --surface2: #403932;
+  --graphite: #1F1D1C;
+  --charcoal: #282625;
+  --surface: #322F2E;
+  --surface2: #3B3837;
   --emerald: #A34726;
   --emerald-dim: #7E371D;
   --emerald-glow: rgba(163,71,38,0.15);
   --emerald-faint: rgba(163,71,38,0.07);
-  --offwhite: #f0ede8;
-  --offwhite-dim: #b8b4ae;
-  --offwhite-muted: #6b6762;
+  --offwhite: #EDECEB;
+  --offwhite-dim: #B6B2B0;
+  --offwhite-muted: #6B6562;
   --amber: #CF5B31;
   --coral: #f97316;
   --rose: #f43f5e;
-  --text: #e8e4de;
-  --text-muted: #8a8580;
+  --text: #E4E3E2;
+  --text-muted: #8A8380;
   --border: rgba(255,255,255,0.07);
   --border-em: rgba(163,71,38,0.25);
 }

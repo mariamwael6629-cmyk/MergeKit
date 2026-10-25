@@ -93,7 +93,7 @@ def build_dashboard(db: Session, user: User) -> DashboardOut:
     lang_counts = Counter(p.language for p in recent_prs)
     total_lang = sum(lang_counts.values()) or 1
     languages = [
-        LanguageShare(name=lang, pct=round((count / total_lang) * 100), color=LANG_COLORS.get(lang, "#8a8580"))
+        LanguageShare(name=lang, pct=round((count / total_lang) * 100), color=LANG_COLORS.get(lang, "#8A8380"))
         for lang, count in lang_counts.most_common()
     ]
 

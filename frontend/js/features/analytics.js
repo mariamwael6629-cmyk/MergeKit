@@ -46,8 +46,8 @@ function renderAnalytics(data) {
       responsive: true, maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: {
-        x: { ticks: { color: '#6b6762', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,0.04)' } },
-        y: { ticks: { color: '#6b6762', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,0.04)' } }
+        x: { ticks: { color: '#6B6562', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,0.04)' } },
+        y: { ticks: { color: '#6B6562', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,0.04)' } }
       }
     }
   });
@@ -75,8 +75,8 @@ function renderAnalytics(data) {
       responsive: true, maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: {
-        x: { ticks: { color: '#6b6762', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,0.04)' } },
-        y: { ticks: { color: '#6b6762', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,0.04)' } }
+        x: { ticks: { color: '#6B6562', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,0.04)' } },
+        y: { ticks: { color: '#6B6562', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,0.04)' } }
       }
     }
   });
